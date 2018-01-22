@@ -65,6 +65,8 @@ jobs:
             mkdir /tmp/test-results
             ./cc-test-reporter before-build
 
+            sleep 500
+            sudo cat /var/log/elasticsearch/elasticsearch.log
             bundle exec rspec --format progress \
                             --format RspecJunitFormatter \
                             --out /tmp/test-results/rspec.xml \
